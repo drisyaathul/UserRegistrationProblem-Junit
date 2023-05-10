@@ -4,11 +4,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-    /*
-     UC1: Enter Valid FirstName
-     */
-    public boolean validFirstname(String firstName) {
 
-       return Pattern.matches("^[A-Z][a-z]{2,}", firstName);
+    public boolean validFirstname(String firstName) {
+     /*
+      UC1: Enter Valid FirstName
+     */
+       return Pattern.matches("^[A-Z]{1}[a-z]{2,}", firstName);
+    }
+    public boolean validLastname(String lastName) {
+     /*
+      UC2: Enter Valid LastName
+     */
+        return Pattern.matches("^[A-Z]{1}[a-z]{2,}",lastName);
     }
 }
