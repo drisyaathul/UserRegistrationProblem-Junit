@@ -13,7 +13,6 @@ public class UserRegistrationTest {
     public static void initialize(){
          userRegistration = new UserRegistration();
     }
-
     @Test
     void givenFirstNameReturnTrue() {
         /*
@@ -32,4 +31,14 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualLastName);
         System.out.println("Valid Last Name");
     }
+    @Test
+    void givenEmailIdReturnTrue() {
+        /*
+            UC3: Test Valid Email-Id
+        */
+        boolean actualEmail = userRegistration.validEmailId("abc.xyz@bl.co.in");
+        Assertions.assertTrue(actualEmail);
+        System.out.println("Valid Email-Id");
+    }
+
 }

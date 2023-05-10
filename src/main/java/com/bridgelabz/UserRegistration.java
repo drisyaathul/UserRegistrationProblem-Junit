@@ -17,4 +17,10 @@ public class UserRegistration {
      */
         return Pattern.matches("^[A-Z]{1}[a-z]{2,}",lastName);
     }
+    public boolean validEmailId(String emailId) {
+     /*
+      UC3: Enter Valid Email-Id
+     */
+        return Pattern.matches("^[a-z0-9.]{3,}@[a-z.]{2,}",emailId);
+    }
 }
