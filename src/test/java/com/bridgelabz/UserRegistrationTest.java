@@ -13,6 +13,7 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         boolean actualFirstName = userRegistration.validFirstname("Drisya");
         Assertions.assertTrue(actualFirstName);
+        System.out.println("Valid First Name");
     }
 
 }
