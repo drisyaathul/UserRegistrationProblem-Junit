@@ -40,5 +40,14 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualEmail);
         System.out.println("Valid Email-Id");
     }
+    @Test
+    void givenMobileFormatReturnTrue() {
+        /*
+            UC4: Test Valid Mobile Format
+        */
+        boolean actualMobileFormat = userRegistration.validMobileFormat("+91 9874563210");
+        Assertions.assertTrue(actualMobileFormat);
+        System.out.println("Valid Mobile Format");
+    }
 
 }

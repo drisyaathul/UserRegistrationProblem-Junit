@@ -23,4 +23,12 @@ public class UserRegistration {
      */
         return Pattern.matches("^[a-z0-9.]{3,}@[a-z.]{2,}",emailId);
     }
+
+    public boolean validMobileFormat(String mobileNumber) {
+     /*
+      UC4: Enter Valid Mobile Format
+     */
+        return Pattern.matches("^[+][0-9]{1,3}\s\\d{10}",mobileNumber);
+
+    }
 }
