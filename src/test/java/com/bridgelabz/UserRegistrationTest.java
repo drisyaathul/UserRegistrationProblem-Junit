@@ -165,5 +165,6 @@ public class UserRegistrationTest {
         boolean actualEmail9 = userRegistration.validEmail("abc+100@gmail.com");
         Assertions.assertTrue(actualEmail9);
         System.out.println("Valid Email Address-9");
+
     }
 }
