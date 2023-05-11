@@ -37,4 +37,11 @@ public class UserRegistration {
      */
         return Pattern.matches("^[A-Za-z0-9].{8,}",password);
     }
+
+    public boolean validEmail(String email) {
+    /*
+       UC9: Enter Valid Email Format
+     */
+        return Pattern.matches("[a-z0-9].+@[a-z0-9.]{2,}",email);
+    }
 }
