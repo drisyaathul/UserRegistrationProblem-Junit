@@ -76,5 +76,14 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule3 Format");
     }
+    @Test
+    void givenPasswordHasOneSpecialCharacterReturnTrue() {
+        /*
+            UC8: Test Valid Password should have one special character-Rule3
+        */
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123_Password");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password-Rule4 Format");
+    }
 
 }
