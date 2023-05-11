@@ -79,7 +79,7 @@ public class UserRegistrationTest {
     @Test
     void givenPasswordHasOneSpecialCharacterReturnTrue() {
         /*
-            UC8: Test Valid Password should have one special character-Rule3
+            UC8: Test Valid Password should have one special character-Rule4
         */
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123_Password");
         Assertions.assertTrue(actualPasswordFormat);
