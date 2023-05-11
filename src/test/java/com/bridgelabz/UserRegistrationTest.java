@@ -14,79 +14,119 @@ public class UserRegistrationTest {
          userRegistration = new UserRegistration();
     }
     @Test
-    void givenFirstNameReturnTrue() {
-        /*
-            UC1: Test Valid FirstName
-        */
+    void givenFirstNameHappyTest() {
+        //Valid First Name
         boolean actualFirstName = userRegistration.validFirstname("Drisya");
         Assertions.assertTrue(actualFirstName);
         System.out.println("Valid First Name");
     }
     @Test
-    void givenLastNameReturnTrue() {
-        /*
-            UC2: Test Valid LastName
-        */
+    void givenFirstNameSadTest() {
+        //Invalid First Name
+        boolean actualFirstName = userRegistration.validFirstname("drisya");
+        Assertions.assertFalse(actualFirstName);
+        System.out.println("Invalid First Name");
+    }
+    @Test
+    void givenLastNameHappyTest() {
+        //Valid Last Name
         boolean actualLastName = userRegistration.validLastname("Athul");
         Assertions.assertTrue(actualLastName);
         System.out.println("Valid Last Name");
     }
     @Test
-    void givenEmailIdReturnTrue() {
-        /*
-            UC3: Test Valid Email-Id
-        */
+    void givenLastNameSadTest() {
+        //Invalid Last Name
+        boolean actualLastName = userRegistration.validLastname("athul");
+        Assertions.assertFalse(actualLastName);
+        System.out.println("Invalid Last Name");
+    }
+    @Test
+    void givenEmailIdHappyTest() {
+       // Valid Email Id
         boolean actualEmail = userRegistration.validEmailId("abc.xyz@bl.co.in");
         Assertions.assertTrue(actualEmail);
         System.out.println("Valid Email-Id");
     }
     @Test
-    void givenMobileFormatReturnTrue() {
-        /*
-            UC4: Test Valid Mobile Format
-        */
+    void givenEmailIdSadTest() {
+        // Invalid Email Id
+        boolean actualEmail = userRegistration.validEmailId("abc.xyzbl.co.in");
+        Assertions.assertFalse(actualEmail);
+        System.out.println("Invalid Email-Id");
+    }
+    @Test
+    void givenMobileFormatHappyTest() {
+        // Test Valid Mobile Format
         boolean actualMobileFormat = userRegistration.validMobileFormat("+91 9874563210");
         Assertions.assertTrue(actualMobileFormat);
         System.out.println("Valid Mobile Format");
     }
     @Test
-    void givenPasswordMinimum8CharactersReturnTrue() {
-        /*
-            UC5: Test Valid Password minimum 8 characters-Rule1
-        */
+    void givenMobileFormatSadTest() {
+        // Test Invalid Mobile Format
+        boolean actualMobileFormat = userRegistration.validMobileFormat("+919874563210");
+        Assertions.assertFalse(actualMobileFormat);
+        System.out.println("Invalid Mobile Format");
+    }
+    @Test
+    void givenPasswordMinimum8CharactersHappyTest() {
+        // Test Valid Password-Rule1
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("secretpassword");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule1 Format");
     }
     @Test
-    void givenPasswordAtLeastOneUpperCaseReturnTrue() {
-        /*
-            UC6: Test Valid Password at least one Upper Case-Rule2
-        */
+    void givenPasswordMinimum8CharactersSadTest() {
+        // Test invalid Password-Rule1
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("secret");
+        Assertions.assertFalse(actualPasswordFormat);
+        System.out.println("Invalid Password-Rule1 Format");
+    }
+    @Test
+    void givenPasswordAtLeastOneUpperCaseHappyTest() {
+        // Test Valid Password at least one Upper Case-Rule2
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("SecretPassword");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule2 Format");
     }
     @Test
-    void givenPasswordAtLeastOneNumericNumberReturnTrue() {
-        /*
-            UC7: Test Valid Password at least one Numeric number-Rule3
-        */
+    void givenPasswordAtLeastOneUpperCaseSadTest() {
+        // Test Invalid Password at least one Upper Case-Rule2
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret");
+        Assertions.assertFalse(actualPasswordFormat);
+        System.out.println("Invalid Password-Rule2 Format");
+    }
+    @Test
+    void givenPasswordAtLeastOneNumericNumberHappyTest() {
+        // Test Valid Password at least one Numeric number-Rule3
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123Password");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule3 Format");
     }
     @Test
-    void givenPasswordHasOneSpecialCharacterReturnTrue() {
-        /*
-            UC8: Test Valid Password should have one special character-Rule4
-        */
+    void givenPasswordAtLeastOneNumericNumberSadTest() {
+        // Test Invalid Password at least one Numeric number-Rule3
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Sec2et");
+        Assertions.assertFalse(actualPasswordFormat);
+        System.out.println("Invalid Password-Rule3 Format");
+    }
+    @Test
+    void givenPasswordHasOneSpecialCharacterHappyTest() {
+        // Test Valid Password should have one special character-Rule4
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123_Password");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule4 Format");
     }
     @Test
-    void givenAllEmailSamplesShouldReturnTrue() {
+    void givenPasswordHasOneSpecialCharacterSadTest() {
+        // Test Invalid Password should have one special character-Rule4
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secr_12");
+        Assertions.assertFalse(actualPasswordFormat);
+        System.out.println("Invalid Password-Rule4 Format");
+    }
+    @Test
+    void givenAllEmailSamplesHappyTest() {
         /*
             UC9: Test all Email Samples
         */
