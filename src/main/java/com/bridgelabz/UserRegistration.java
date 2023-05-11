@@ -35,6 +35,6 @@ public class UserRegistration {
      /*
       UC5: Enter Valid Mobile Format
      */
-        return Pattern.matches("^[a-z]{8,}",password);
+        return Pattern.matches("^[A-Za-z]{8,}",password);
     }
 }
