@@ -49,5 +49,14 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualMobileFormat);
         System.out.println("Valid Mobile Format");
     }
+    @Test
+    void givenPasswordFormatReturnTrue() {
+        /*
+            UC5: Test Valid Password
+        */
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("secretpassword");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password Format");
+    }
 
 }

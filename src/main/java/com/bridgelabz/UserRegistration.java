@@ -29,6 +29,12 @@ public class UserRegistration {
       UC4: Enter Valid Mobile Format
      */
         return Pattern.matches("^[+][0-9]{1,3}\s\\d{10}",mobileNumber);
+    }
 
+    public boolean validPasswordFormat(String password) {
+     /*
+      UC5: Enter Valid Mobile Format
+     */
+        return Pattern.matches("^[a-z]{8,}",password);
     }
 }
