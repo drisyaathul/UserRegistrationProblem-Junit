@@ -50,13 +50,22 @@ public class UserRegistrationTest {
         System.out.println("Valid Mobile Format");
     }
     @Test
-    void givenPasswordFormatReturnTrue() {
+    void givenPasswordMinimum8CharactersReturnTrue() {
         /*
-            UC5: Test Valid Password
+            UC5: Test Valid Password minimum 8 characters-Rule1
         */
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("secretpassword");
         Assertions.assertTrue(actualPasswordFormat);
-        System.out.println("Valid Password Format");
+        System.out.println("Valid Password-Rule1 Format");
+    }
+    @Test
+    void givenPasswordAtLeastOneUpperCaseReturnTrue() {
+        /*
+            UC6: Test Valid Password at least one Upper Case-Rule2
+        */
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("SecretPassword");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password-Rule2 Format");
     }
 
 }
