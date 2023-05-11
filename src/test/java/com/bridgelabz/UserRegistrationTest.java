@@ -67,5 +67,14 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule2 Format");
     }
+    @Test
+    void givenPasswordAtLeastOneNumericNumberReturnTrue() {
+        /*
+            UC7: Test Valid Password at least one Numeric number-Rule3
+        */
+        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123Password");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password-Rule3 Format");
+    }
 
 }

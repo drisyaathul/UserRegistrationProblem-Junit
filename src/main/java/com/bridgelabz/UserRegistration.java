@@ -33,8 +33,8 @@ public class UserRegistration {
 
     public boolean validPasswordFormat(String password) {
      /*
-      UC5: Enter Valid Mobile Format
+       Enter Valid Mobile Format
      */
-        return Pattern.matches("^[A-Za-z]{8,}",password);
+        return Pattern.matches("^[A-Za-z0-9]{8,}",password);
     }
 }
