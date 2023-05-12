@@ -39,7 +39,7 @@ public class MultipleEmailTest {
 
     }
     @Test
-    public void givenEmailHappyTest() {
+    public void givenEmailHappyTest()  throws InvalidUserDetailsException {
         boolean actualEmail = userRegistration.validEmail(emailId);
         Assert.assertEquals(expectedResult,actualEmail);
         System.out.println("Email Successfully Validate.");

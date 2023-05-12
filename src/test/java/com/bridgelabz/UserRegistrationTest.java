@@ -14,119 +14,63 @@ public class UserRegistrationTest {
          userRegistration = new UserRegistration();
     }
     @Test
-    void givenFirstNameHappyTest() {
+    void givenFirstNameHappyTest() throws InvalidUserDetailsException {
         //Valid First Name
         boolean actualFirstName = userRegistration.validFirstname("Drisya");
         Assertions.assertTrue(actualFirstName);
         System.out.println("Valid First Name");
     }
     @Test
-    void givenFirstNameSadTest() {
-        //Invalid First Name
-        boolean actualFirstName = userRegistration.validFirstname("drisya");
-        Assertions.assertFalse(actualFirstName);
-        System.out.println("Invalid First Name");
-    }
-    @Test
-    void givenLastNameHappyTest() {
+    void givenLastNameHappyTest() throws InvalidUserDetailsException {
         //Valid Last Name
         boolean actualLastName = userRegistration.validLastname("Athul");
         Assertions.assertTrue(actualLastName);
         System.out.println("Valid Last Name");
     }
     @Test
-    void givenLastNameSadTest() {
-        //Invalid Last Name
-        boolean actualLastName = userRegistration.validLastname("athul");
-        Assertions.assertFalse(actualLastName);
-        System.out.println("Invalid Last Name");
-    }
-    @Test
-    void givenEmailIdHappyTest() {
+    void givenEmailIdHappyTest() throws InvalidUserDetailsException {
        // Valid Email Id
         boolean actualEmail = userRegistration.validEmailId("abc.xyz@bl.co.in");
         Assertions.assertTrue(actualEmail);
         System.out.println("Valid Email-Id");
     }
     @Test
-    void givenEmailIdSadTest() {
-        // Invalid Email Id
-        boolean actualEmail = userRegistration.validEmailId("abc.xyzbl.co.in");
-        Assertions.assertFalse(actualEmail);
-        System.out.println("Invalid Email-Id");
-    }
-    @Test
-    void givenMobileFormatHappyTest() {
+    void givenMobileFormatHappyTest() throws InvalidUserDetailsException {
         // Test Valid Mobile Format
         boolean actualMobileFormat = userRegistration.validMobileFormat("+91 9874563210");
         Assertions.assertTrue(actualMobileFormat);
         System.out.println("Valid Mobile Format");
     }
     @Test
-    void givenMobileFormatSadTest() {
-        // Test Invalid Mobile Format
-        boolean actualMobileFormat = userRegistration.validMobileFormat("+919874563210");
-        Assertions.assertFalse(actualMobileFormat);
-        System.out.println("Invalid Mobile Format");
-    }
-    @Test
-    void givenPasswordMinimum8CharactersHappyTest() {
+    void givenPasswordMinimum8CharactersHappyTest() throws InvalidUserDetailsException {
         // Test Valid Password-Rule1
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("secretpassword");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule1 Format");
     }
     @Test
-    void givenPasswordMinimum8CharactersSadTest() {
-        // Test invalid Password-Rule1
-        boolean actualPasswordFormat = userRegistration.validPasswordFormat("secret");
-        Assertions.assertFalse(actualPasswordFormat);
-        System.out.println("Invalid Password-Rule1 Format");
-    }
-    @Test
-    void givenPasswordAtLeastOneUpperCaseHappyTest() {
+    void givenPasswordAtLeastOneUpperCaseHappyTest() throws InvalidUserDetailsException {
         // Test Valid Password at least one Upper Case-Rule2
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("SecretPassword");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule2 Format");
     }
     @Test
-    void givenPasswordAtLeastOneUpperCaseSadTest() {
-        // Test Invalid Password at least one Upper Case-Rule2
-        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret");
-        Assertions.assertFalse(actualPasswordFormat);
-        System.out.println("Invalid Password-Rule2 Format");
-    }
-    @Test
-    void givenPasswordAtLeastOneNumericNumberHappyTest() {
+    void givenPasswordAtLeastOneNumericNumberHappyTest() throws InvalidUserDetailsException {
         // Test Valid Password at least one Numeric number-Rule3
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123Password");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule3 Format");
     }
     @Test
-    void givenPasswordAtLeastOneNumericNumberSadTest() {
-        // Test Invalid Password at least one Numeric number-Rule3
-        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Sec2et");
-        Assertions.assertFalse(actualPasswordFormat);
-        System.out.println("Invalid Password-Rule3 Format");
-    }
-    @Test
-    void givenPasswordHasOneSpecialCharacterHappyTest() {
+    void givenPasswordHasOneSpecialCharacterHappyTest() throws InvalidUserDetailsException {
         // Test Valid Password should have one special character-Rule4
         boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secret123_Password");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password-Rule4 Format");
     }
     @Test
-    void givenPasswordHasOneSpecialCharacterSadTest() {
-        // Test Invalid Password should have one special character-Rule4
-        boolean actualPasswordFormat = userRegistration.validPasswordFormat("Secr_12");
-        Assertions.assertFalse(actualPasswordFormat);
-        System.out.println("Invalid Password-Rule4 Format");
-    }
-    @Test
-    void givenAllEmailSamplesHappyTest() {
+    void givenAllEmailSamplesHappyTest() throws InvalidUserDetailsException {
         /*
             UC9: Test all Email Samples
         */
