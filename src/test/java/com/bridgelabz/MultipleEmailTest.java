@@ -14,7 +14,6 @@ public class MultipleEmailTest {
     /*
      UC11: Parameterized test to validate multiple entry for the Email Addresses
      */
-
     private String emailId;
     private boolean expectedResult;
     static UserRegistration userRegistration;
